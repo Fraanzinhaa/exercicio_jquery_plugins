@@ -5,14 +5,25 @@
   font-family: 'Roboto', sans-serif;
 }
 
-header {
+html {
+  overflow-x: hidden; /*todo conteudo que sair da barra horizontal nao sera visivel, entao nao tera barra de rolagem mais*/
+}
+
+header, footer {
   background-color: #192a56;
   padding-top: 16px;
   color: #fff;
 }
 
-header > .container {
-  display: flex;
+header {
+  position: sticky; /*faz com que o cabeçalho acompanhe a rolagem da página*/
+  top: 0;
+  left: 0;
+  z-index: 1; /*foi adc index pq ele esta concorrendo o position com o relative da div */
+}
+
+header > .container,
+footer > .container {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
@@ -21,6 +32,7 @@ header > .container {
 nav {
   background-color: #575fcf;
   padding: 16px 0;
+  display: none;
 }
 
 .container {
@@ -45,6 +57,7 @@ nav li a {
 
 .menu-hamburguer {
   width: 32px;
+  cursor: pointer;
 }
 
 .menu-hamburguer span {
@@ -55,5 +68,105 @@ nav li a {
   margin-bottom: 4px;
 }
 
+.container-flex {
+  display: flex;
+}
 
+#Sobre-a-loja img {
+  max-width: 400px;
+  margin-right: 24px;
+
+}
+
+section {
+  padding: 48px 0;
+}
+
+section h2 {
+  margin-bottom: 16px;
+}
+
+.lista-veiculos {
+  flex-wrap: wrap; /*quebra de linhas */
+}
+
+.lista-veiculos li {
+  list-style: none;
+  max-width: 30%;
+  margin-bottom: 24px;
+}
+
+.lista-veiculos li img {
+  max-width: 100%;
+}
+
+.lista-veiculos li h3 {
+  margin: 16px 0;
+}
+
+.item-central {
+   margin: 0 5%; /*como colocamos max-width 30% sobrou 10% então adicionamos 5% da margin direita e esquerda */
+}
+
+button  {
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  background-color: #119759;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.price {
+  margin: 16px 0;
+  display: block;
+}
+
+.price del {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.form-campo {
+  margin-bottom: 16px;
+}
+
+.form-campo label {
+  font-weight: bold;
+   display: block; /*aqui colocamos display block pq o label tem display inline */
+}
+
+.form-campo input,
+.form-campo textarea {
+  width: 100%;
+  display: block;
+  padding: 8px;
+}
+
+.form-campo textarea {
+  resize: none; /*aqui tira a possibilidade de ficar aumentando ou diminuindo o textarea */
+  height: 120px;
+}
+
+form {
+  max-width: 360px;
+}
+
+form button {
+  max-width: 120px;
+}
+
+footer li {
+  list-style: none;
+  margin-left: 16px;
+}
+
+footer li img {
+  height: 32px;
+}
 
